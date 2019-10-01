@@ -3,10 +3,14 @@ const h1 = document.querySelector('.logo-heading');
 h1.addEventListener('mouseover', () => (h1.textContent = `Let's Party!`))
 
 const links = document.querySelectorAll('.nav-link');
-links[0].addEventListener('mouseover', () => (links[0].textContent = 'Leave Home!'));
-links[1].addEventListener('mouseover', () => (links[1].textContent = 'About YOU!'));
-links[2].addEventListener('mouseover', () => (links[2].textContent = 'Blur'));
-links[3].addEventListener('mouseover', () => (links[3].textContent = 'Text 411'));
+links[0].addEventListener('mouseenter', () => (links[0].textContent = 'Leave Home!'));
+links[0].addEventListener('mouseleave', () => (links[0].textContent = 'Home'));
+links[1].addEventListener('mouseenter', () => (links[1].textContent = 'About YOU!'));
+links[1].addEventListener('mouseleave', () => (links[1].textContent = 'About'));
+links[2].addEventListener('mouseenter', () => (links[2].textContent = 'Blurb'));
+links[2].addEventListener('mouseleave', () => (links[2].textContent = 'Blog'));
+links[3].addEventListener('mouseenter', () => (links[3].textContent = 'Text 411'));
+links[3].addEventListener('mouseleave', () => (links[3].textContent = 'Contact'));
 
 links[0].addEventListener('click', () => (links[0].href = 'https://www.google.com/maps'));
 // links[1].addEventListener('click', () => (links[1].href = '#'));
@@ -15,10 +19,10 @@ links[0].addEventListener('click', () => (links[0].href = 'https://www.google.co
 
 //Change Images
 const img = document.querySelectorAll('img');
-img[0].addEventListener('mouseover', () => (img[0].src = 'https://images.pexels.com/photos/2767817/pexels-photo-2767817.jpeg?cs=srgb&dl=blur-blurred-background-bus-2767817.jpg&fm=jpg'));
-img[1].addEventListener('mouseover', () => (img[1].src = 'https://images.pexels.com/photos/1851467/pexels-photo-1851467.jpeg?cs=srgb&dl=adult-casual-checking-1851467.jpg&fm=jpg'));
-img[2].addEventListener('mouseover', () => (img[2].src = 'https://images.pexels.com/photos/1464825/pexels-photo-1464825.jpeg?cs=srgb&dl=alcoholic-beverage-ale-beer-1464825.jpg&fm=jpg'));
-img[3].addEventListener('mouseover', () => (img[3].src = 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?cs=srgb&dl=bank-banking-banknotes-259027.jpg&fm=jpg'));
+// img[0].addEventListener('click', () => (img[0].src = 'https://images.pexels.com/photos/2767817/pexels-photo-2767817.jpeg?cs=srgb&dl=blur-blurred-background-bus-2767817.jpg&fm=jpg'));
+img[1].addEventListener('click', () => (img[1].src = 'https://images.pexels.com/photos/1851467/pexels-photo-1851467.jpeg?cs=srgb&dl=adult-casual-checking-1851467.jpg&fm=jpg'));
+img[2].addEventListener('click', () => (img[2].src = 'https://images.pexels.com/photos/1464825/pexels-photo-1464825.jpeg?cs=srgb&dl=alcoholic-beverage-ale-beer-1464825.jpg&fm=jpg'));
+img[3].addEventListener('click', () => (img[3].src = 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?cs=srgb&dl=bank-banking-banknotes-259027.jpg&fm=jpg'));
 
 //Change h2 tags
 const h2 = document.querySelectorAll('h2');
@@ -54,10 +58,23 @@ button[0].addEventListener('mouseover', () => (button[0].textContent = 'Visit De
 
 button[1].addEventListener('mouseover', () => (button[1].textContent = 'Visit Mt Everest!'));
 
-button[2].addEventListener('mouseover', () => (button[2].textContent = 'Visit Washington DC!'));
+button[2].addEventListener('mouseover', () => (button[2].textContent = 'Visit The Galapagos!'));
 
 //Change footer
 const footer = document.querySelector('.footer');
 footer.addEventListener('mouseover', () => (footer.style.backgroundColor = 'green'));
 
 paragraphContent[9].addEventListener('mouseover', () => (paragraphContent[9].textContent = 'If you use any of this content, we will sue you in court.'))
+
+
+//Sound
+const oldCarSound = document.createElement('audio');
+oldCarSound.classList.add('car-sound');
+oldCarSound.id = 'audio-player';
+oldCarSound.controls = 'controls';
+oldCarSound.src = 'media\old-car-engine_daniel_simion.mp3'
+oldCarSound.type = 'audio/mp3'
+oldCarSound.style.display = 'none';
+document.querySelector('body').appendChild(oldCarSound);
+
+document.querySelector('.intro img').addEventListener('click', () => document.querySelector('.car-sound').play());
